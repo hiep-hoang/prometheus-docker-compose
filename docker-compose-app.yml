@@ -98,9 +98,9 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
-      - ./grafana/config/:/usr/share/grafana/conf/
-    env_file:
-      - ./grafana/config.monitoring
+      - ./grafana/config/:/etc/grafana/
+    # env_file:
+    #   - ./grafana/config.monitoring
     networks:
       - back-tier
       - front-tier
