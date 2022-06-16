@@ -1,0 +1,27 @@
+[[servers]]
+host = "10.68.68.231"
+port = 389
+use_ssl = false
+start_tls = false
+ssl_skip_verify = false
+bind_dn = "cn=ldap.admin,ou=moca,dc=moca,dc=vn"
+bind_password = "XFhaBV#fXY#Wc!Bg4Y%m3"
+search_filter = "(sAMAccountName=%s)"
+search_base_dns = ["ou=moca,dc=moca,dc=vn"]
+[servers.attributes]
+name = "givenName"
+surname = "sn"
+username = "sAMAccountName"
+member_of = "memberOf"
+email =  "mail"
+[[servers.group_mappings]]
+group_dn = "CN=devops,OU=moca,DC=moca,DC=vn"
+org_role = "Admin"
+grafana_admin = true
+[[servers.group_mappings]]
+group_dn = "CN=sysops,OU=moca,DC=moca,DC=vn"
+org_role = "Admin"
+grafana_admin = true
+[[servers.group_mappings]]
+group_dn = "*"
+org_role = "Editor"
